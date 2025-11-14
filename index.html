@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCG.AI Digital Vault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-color: #020617; /* slate-950 */
+      --sidebar-color: #0f172a; /* slate-900 */
+      --panel-color: rgba(15, 23, 42, 0.6); /* slate-900 with alpha */
+      --border-color: #1e293b; /* slate-800 */
+      --accent-color: #06b6d4; /* cyan-500 */
+      --accent-glow: rgba(6, 182, 212, 0.5);
+      --text-primary: #f8fafc; /* slate-50 */
+      --text-secondary: #94a3b8; /* slate-400 */
+    }
+    .light {
+      --bg-color: #f1f5f9; /* slate-100 */
+      --sidebar-color: #ffffff; /* white */
+      --panel-color: rgba(255, 255, 255, 0.6); /* white with alpha */
+      --border-color: #e2e8f0; /* slate-200 */
+      --accent-color: #0891b2; /* cyan-600 */
+      --accent-glow: rgba(8, 145, 178, 0.4);
+      --text-primary: #0f172a; /* slate-900 */
+      --text-secondary: #64748b; /* slate-500 */
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes pulse-slow {
+      0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.02);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    .animate-slide-up {
+      animation: slideUp 0.5s ease-in-out forwards;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #root {
+      height: 100%;
+      width: 100%;
+    }
+    /* Noise Background */
+    body::after {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      z-index: -1;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOCIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjAyNSIvPjwvc3ZnPg==');
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .light body::after {
+        opacity: 0;
+    }
+    ::selection {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

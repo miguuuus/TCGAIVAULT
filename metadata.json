@@ -1,0 +1,7 @@
+{
+  "name": "TCG Grade Estimator",
+  "description": "An AI-powered tool to analyze TCG cards from a photo and estimate their potential PSA grade. Upload a picture of your card to get an analysis of its centering, corners, edges, and surface, along with a grading recommendation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
